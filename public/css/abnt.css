@@ -1,0 +1,65 @@
+/* ===============================
+   Estilos ABNT básicos – PDFEditor
+   ================================ */
+
+/* Container que simula a página A4 no preview */
+.abnt-documento {
+    background: #ffffff;
+    color: #000000;
+    margin: 0 auto 2rem;
+    padding: 3cm 2cm 2cm 3cm; /* sup, dir, inf, esq (ABNT: 3 / 2 / 2 / 3) */
+    max-width: 21cm;
+    min-height: 29.7cm;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+/* Fonte padrão do texto */
+.abnt-documento,
+.abnt-documento p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+/* Parágrafo normal */
+.abnt-paragrafo {
+    text-align: justify;
+    text-indent: 1.25cm;   /* recuo da primeira linha */
+    margin: 0 0 0.5em;
+}
+
+/* Parágrafo sem recuo (útil para primeiro parágrafo após título, se precisar) */
+.abnt-paragrafo-sem-recuo {
+    text-align: justify;
+    text-indent: 0;
+    margin: 0 0 0.5em;
+}
+
+/* Citação direta longa (> 3 linhas) */
+.abnt-citacao-longa {
+    font-size: 11pt;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 0.5em 0;
+    padding-left: 4cm;   /* recuo do bloco em relação à margem esquerda */
+    text-indent: 0;      /* sem recuo na primeira linha */
+}
+
+/* Utilitário para blocos com espaçamento simples (se quiser usar depois) */
+.abnt-linha-simples {
+    line-height: 1.0;
+}
+
+/* Título geral (se encaixar em usos futuros) */
+.abnt-titulo-trabalho {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2cm;
+}
+
+/* Quebra de página manual (para PDF, se precisar) */
+.abnt-page-break {
+    page-break-after: always;
+}

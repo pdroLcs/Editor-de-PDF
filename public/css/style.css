@@ -1,0 +1,9 @@
+/* ===============================
+   Estilos básicos – PDFEditor
+   ================================ */
+
+/* Container que simula a página A4 no preview */
+.ufms_logo {
+    max-height: 80px;
+    width: auto;
+}
