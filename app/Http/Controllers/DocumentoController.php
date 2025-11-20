@@ -87,7 +87,7 @@ class DocumentoController extends Controller
     public function destroy(Documento $documento)
     {
         $documento->delete();
-        return redirect()->route('documentos.preview')->with('success', 'Documento excluído com sucesso!');
+        return redirect()->route('documentos.index')->with('success', 'Documento excluído com sucesso!');
     }
 
     //Preview HTML com formatação ABNT
