@@ -68,17 +68,40 @@ class DocumentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Documento $documento)
     {
-        //TODO: Implementar formulário de edição de documento
+        $tiposDocumento = [
+            ['id' => 'artigo', 'nome' => 'Artigo'],
+            ['id' => 'tcc', 'nome' => 'TCC'],
+            ['id' => 'relatorio', 'nome' => 'Relatório'],
+        ];
+        return view('documentos.edit', compact('documento', 'tiposDocumento'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(DocumentoRequest $request, Documento $documento)
     {
-        //TODO: Implementar atualização do documento
+        $dados = $request->validated();
+
+        $documento->update([
+            'titulo' => $dados['titulo'],
+            'tipo' => $dados['tipo'] ?? 'artigo',
+        ]);
+
+        $documento->blocos()->delete();
+
+        foreach ($dados['blocos'] as $ordem => $bloco) {
+            BlocoTexto::create([
+                'documento_id' => $documento->id,
+                'ordem' => $ordem,
+                'tipo' => $bloco['tipo'],
+                'conteudo' => $bloco['conteudo'],
+            ]);
+        }
+
+        return redirect()->route('documentos.preview', $documento)->with('success', 'Documento atualizado com sucesso!');
     }
 
     /**

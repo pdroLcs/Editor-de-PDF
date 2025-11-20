@@ -35,20 +35,10 @@
                         <td>{{ $doc->tipo }}</td>
                         <td>{{ $doc->created_at->format('d/m/Y H:i') }}</td>
                         <td class="text-end">
-                            <a href="{{ route('documentos.preview', $doc) }}" class="btn btn-sm btn-outline-secondary">
-                                Visualizar
-                            </a>
-                            <a href="{{ route('documentos.pdf', $doc) }}" class="btn btn-sm btn-outline-success">
-                                PDF
-                            </a>
-                            <form action="{{ route('documentos.destroy', $doc) }}" method="POST" class="d-inline"
-                                  onsubmit="return confirm('Confirma excluir este documento?');">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-sm btn-outline-danger">
-                                    Excluir
-                                </button>
-                            </form>
+                            <x-action-button route="documentos.preview" :obj="$doc" style="secondary" text="Visualizar"/>
+                            <x-action-button route="documentos.pdf" :obj="$doc" style="success" text="PDF"/>
+                            <x-action-button route="documentos.edit" :obj="$doc" text="Editar"/>
+                            <x-action-button route="documentos.destroy" :obj="$doc" style="danger" text="Excluir" method="DELETE"/>
                         </td>
                     </tr>
                 @endforeach
