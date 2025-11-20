@@ -37,6 +37,7 @@
                         <td class="text-end">
                             <x-action-button route="documentos.preview" :obj="$doc" style="secondary" text="Visualizar"/>
                             <x-action-button route="documentos.pdf" :obj="$doc" style="success" text="PDF"/>
+                            <x-action-button route="documentos.edit" :obj="$doc" text="Editar"/>
                             <x-action-button route="documentos.destroy" :obj="$doc" style="danger" text="Excluir" method="DELETE"/>
                         </td>
                     </tr>
