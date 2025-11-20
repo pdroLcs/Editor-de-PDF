@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'GhostWriter – Novo Documento')
+@section('title', 'Novo Documento')
 
 @section('content')
     <x-card>

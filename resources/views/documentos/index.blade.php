@@ -1,10 +1,10 @@
 @extends('layouts.base')
 
-@section('title', 'GhostWriter – Documentos ABNT')
+@section('title', 'Documentos ABNT')
 
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="h3 mb-0">GhostWriter – Documentos ABNT</h1>
+        <h1 class="h3 mb-0">Documentos ABNT</h1>
         <a href="{{ route('documentos.create') }}" class="btn btn-primary">
             Novo documento
         </a>
