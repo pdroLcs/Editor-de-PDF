@@ -2,7 +2,7 @@
   <div class="container">
     <a class="navbar-brand" href="{{ url('https://cpan.ufms.br') }}">
       <img src="{{ asset('/img/ufms_logo.png') }}" alt="UFMS" class="me-2 ufms_logo" /></a>
-    <a class="navbar-brand" href="{{ url('/') }}">Projeto PDFEditor</a>
+    <a class="navbar-brand" href="{{ url('/') }}">Editor de PDF</a>
     
     <x-navbar-toggler />
     

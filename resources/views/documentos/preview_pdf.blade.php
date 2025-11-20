@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>{{ $documento->titulo }} – GhostWriter</title>
+    <title>{{ $documento->titulo }}</title>
     <style>
         /* Margens da página no PDF (ABNT) */
         @page {

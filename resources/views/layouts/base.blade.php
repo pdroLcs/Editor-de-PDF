@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     {{-- Definição do title --}}
-    <title>@yield('title', $pageTitle ?? 'Projeto PDFEditor')</title>
+    <title>@yield('title', $pageTitle ?? 'Editor de PDF')</title>
     
     {{-- Link do Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
