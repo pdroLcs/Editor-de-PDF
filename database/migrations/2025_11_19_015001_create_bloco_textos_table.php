@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bloco_textos', function (Blueprint $table) {
+        Schema::create('blocos_texto', function (Blueprint $table) {
             $table->id();
             $table->foreignId('documento_id')->constrained()->onDelete('cascade');
             $table->unsignedInteger('ordem');
