@@ -104,6 +104,8 @@ class DocumentoController extends Controller
         $documento->load('blocos');
         $paragrafos = $this->montarParagrafos($documento->blocos);
         $pdf = Pdf::loadView('documentos.preview_pdf', compact('documento', 'paragrafos'))->setPaper('a4', 'portrait');
+        $filename = str()->slug($documento->titulo) . '.pdf';
+        return $pdf->download($filename);
     }
 
     /**
